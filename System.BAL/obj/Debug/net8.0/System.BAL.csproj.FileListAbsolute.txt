@@ -1,10 +1,14 @@
 E:\Windows\Underway\Project\System\System.BAL\bin\Debug\net8.0\System.BAL.deps.json
 E:\Windows\Underway\Project\System\System.BAL\bin\Debug\net8.0\System.BAL.dll
 E:\Windows\Underway\Project\System\System.BAL\bin\Debug\net8.0\System.BAL.pdb
+E:\Windows\Underway\Project\System\System.BAL\bin\Debug\net8.0\System.DAL.dll
+E:\Windows\Underway\Project\System\System.BAL\bin\Debug\net8.0\System.DAL.pdb
+E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.csproj.AssemblyReference.cache
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.GeneratedMSBuildEditorConfig.editorconfig
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.AssemblyInfoInputs.cache
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.AssemblyInfo.cs
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.csproj.CoreCompileInputs.cache
+E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.csproj.CopyComplete
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.dll
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\refint\System.BAL.dll
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.pdb
