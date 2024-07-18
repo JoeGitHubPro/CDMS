@@ -1,0 +1,14 @@
+E:\Windows\Underway\Project\System\System.DAL\bin\Debug\net8.0\System.DAL.deps.json
+E:\Windows\Underway\Project\System\System.DAL\bin\Debug\net8.0\System.DAL.runtimeconfig.json
+E:\Windows\Underway\Project\System\System.DAL\bin\Debug\net8.0\System.DAL.dll
+E:\Windows\Underway\Project\System\System.DAL\bin\Debug\net8.0\System.DAL.pdb
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.csproj.AssemblyReference.cache
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.AssemblyInfoInputs.cache
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.AssemblyInfo.cs
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.csproj.CoreCompileInputs.cache
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.dll
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\refint\System.DAL.dll
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.pdb
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.genruntimeconfig.cache
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\ref\System.DAL.dll
