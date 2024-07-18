@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.DAL", "System.DAL\System.DAL.csproj", "{E2AA2BEF-FCF6-4875-82F6-C7EFF03DBA06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.BAL", "System.BAL\System.BAL.csproj", "{7ADD98E9-579E-4FC0-A98C-C2AF27316EDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.BAL", "System.BAL\System.BAL.csproj", "{7ADD98E9-579E-4FC0-A98C-C2AF27316EDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Api", "System.Api\System.Api.csproj", "{7487B35F-0F83-421B-BBA3-C03DE204D353}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7ADD98E9-579E-4FC0-A98C-C2AF27316EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ADD98E9-579E-4FC0-A98C-C2AF27316EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ADD98E9-579E-4FC0-A98C-C2AF27316EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7487B35F-0F83-421B-BBA3-C03DE204D353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7487B35F-0F83-421B-BBA3-C03DE204D353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7487B35F-0F83-421B-BBA3-C03DE204D353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7487B35F-0F83-421B-BBA3-C03DE204D353}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
