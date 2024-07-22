@@ -11,7 +11,7 @@ namespace System.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "FristName",
+                name: "FirstName",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
@@ -23,7 +23,7 @@ namespace System.DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "FristName",
+                name: "FirstName",
                 table: "AspNetUsers",
                 type: "nvarchar(max)",
                 nullable: true);

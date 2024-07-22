@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.BAL", "System.BAL\Sy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Api", "System.Api\System.Api.csproj", "{7487B35F-0F83-421B-BBA3-C03DE204D353}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.MVC", "System.MVC\System.MVC.csproj", "{2F51D2DD-681F-4DF9-8F29-F632718DDECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.MVC", "System.MVC\System.MVC.csproj", "{2F51D2DD-681F-4DF9-8F29-F632718DDECE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

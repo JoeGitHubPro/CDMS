@@ -259,3 +259,6 @@ E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\refint\System.Api
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\System.Api.pdb
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\System.Api.genruntimeconfig.cache
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\ref\System.Api.dll
+E:\Windows\Underway\Project\System\System.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Windows\Underway\Project\System\System.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Windows\Underway\Project\System\System.Api\bin\Debug\net8.0\System.Text.Json.dll

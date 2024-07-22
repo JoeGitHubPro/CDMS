@@ -19,7 +19,7 @@ namespace System.DAL.Migrations
                 oldType: "nvarchar(max)");
 
             migrationBuilder.AlterColumn<string>(
-                name: "FristName",
+                name: "FirstName",
                 table: "AspNetUsers",
                 type: "nvarchar(max)",
                 nullable: true,
@@ -41,7 +41,7 @@ namespace System.DAL.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "FristName",
+                name: "FirstName",
                 table: "AspNetUsers",
                 type: "nvarchar(max)",
                 nullable: false,
