@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Api.Models;
-using System.Api.Services;
+using System.Api.Identity.Services;
+using System.Api.Models.Identity;
 
 namespace System.Api.Controllers
 {

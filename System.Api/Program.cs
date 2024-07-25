@@ -1,11 +1,11 @@
-
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using System.Api.Services;
-using System.Api.Settings;
+using System.Api.Identity.Services;
+using System.Api.Identity.Settings;
+using System.BAL.StartUp;
 using System.DAL.Data;
-using System.DAL.Models;
+using System.DAL.Models.Identity;
 using System.Text;
 
 namespace System.Api
@@ -19,13 +19,29 @@ namespace System.Api
             // Add services to the container.
 
             builder.Services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<AppDbContext>();
 
-            #region AUTH
+            #region SeedingInitializationData
+
+            using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+            {
+                AppDbContext? dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+                ApplicationUser user = new();
+                builder.Configuration.GetSection(nameof(ApplicationUser)).Bind(user);
+
+                Initialization initialize = new Initialization(dbContext, user);
+                initialize.InitializeRoles().Wait();
+            }
+
+            #endregion
+
+            #region Authentication
 
             // Add JWT service
             builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
@@ -78,7 +94,6 @@ namespace System.Api
             app.UseAuthentication();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

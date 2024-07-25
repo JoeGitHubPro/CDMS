@@ -1,1 +1,1 @@
-﻿global using System.DAL.Models;
+﻿global using System.DAL.Models.Identity;
