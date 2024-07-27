@@ -7,7 +7,6 @@ namespace System.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -21,6 +20,12 @@ namespace System.MVC.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult StoreSelectedValue(string selectedValue)
+        {
+            TempData["SelectedValue"] = selectedValue;
+            return Ok();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

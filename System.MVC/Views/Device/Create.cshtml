@@ -1,0 +1,45 @@
+﻿@model DeviceViewModel
+
+@{
+    ViewData["Title"] = "Create Device";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Device</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="DeviceID" class="control-label"></label>
+                <input asp-for="DeviceID" class="form-control" />
+                <span asp-validation-for="DeviceID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceName" class="control-label"></label>
+                <input asp-for="DeviceName" class="form-control" />
+                <span asp-validation-for="DeviceName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceCategory" class="control-label"></label>
+                <select asp-for="DeviceCategory" class="form-control" asp-items="ViewBag.DeviceCategory"></select>
+                <span asp-validation-for="DeviceCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceSpecification" class="control-label"></label>
+                <input asp-for="DeviceSpecification" class="form-control" />
+                <span asp-validation-for="DeviceSpecification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -4,8 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - System.MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    @{
+        if (TempData.Peek("SelectedValue")?.ToString() == null)
+        {
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+        }else
+        {
+            <link rel="stylesheet" href="~/css/@TempData.Peek("SelectedValue").ToString()" />
+        }
+    }
+
+
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <link rel="stylesheet" href="~/System.MVC.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -25,6 +39,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="DeviceCategory" asp-action="Index">Device Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Device" asp-action="Index">Device</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="DeviceSpecifications" asp-action="Index">DeviceSpecifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Index">Location</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sponsorship" asp-action="Index">Sponsorship</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ApplicationUser" asp-action="Index">ApplicationUser</a>
+                        </li>
+                         @await Html.PartialAsync("_StaticSelect") 
+                        @* <partial name="_StaticSelectPartial.cshtml" /> *@
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -46,5 +80,24 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('#staticSelect').change(function () {
+                var selectedValue = $(this).val();
+                $.ajax({
+                    url: '@Url.Action("StoreSelectedValue", "Home")',
+                    type: 'POST',
+                    data: { selectedValue: selectedValue },
+                    success: function (response) {
+                        location.reload(); // Reload the page on success
+                    },
+                    error: function (error) {
+                        console.error("Error storing value in TempData: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

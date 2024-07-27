@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DeviceViewModel>
+
+@{
+    ViewData["Title"] = "Devices";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Device ID</th>
+            <th>Device Name</th>
+            <th>Device Category</th>
+            <th>Device Specification</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DeviceID</td>
+                <td>@item.DeviceName</td>
+                <td>@item.DeviceCategoryName</td>
+                <td>@item.DeviceSpecification</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

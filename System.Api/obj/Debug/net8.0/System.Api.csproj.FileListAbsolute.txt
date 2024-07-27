@@ -248,6 +248,7 @@ E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\System.Api.Assemb
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\System.Api.csproj.CoreCompileInputs.cache
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\System.Api.MvcApplicationPartsAssemblyInfo.cs
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\System.Api.MvcApplicationPartsAssemblyInfo.cache
+E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\System.Api.sourcelink.json
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\staticwebassets.build.json
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\staticwebassets.development.json
 E:\Windows\Underway\Project\System\System.Api\obj\Debug\net8.0\staticwebassets\msbuild.System.Api.Microsoft.AspNetCore.StaticWebAssets.props

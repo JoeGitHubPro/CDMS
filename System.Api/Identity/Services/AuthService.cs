@@ -35,9 +35,7 @@ namespace System.Api.Identity.Services
             var user = new ApplicationUser
             {
                 UserName = model.Username,
-                Email = model.Email,
-                FirstName = model.FirstName,
-                LastName = model.LastName
+                Email = model.Email
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);

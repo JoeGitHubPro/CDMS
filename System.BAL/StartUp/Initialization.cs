@@ -61,8 +61,6 @@ namespace System.BAL.StartUp
             //Get password from json appsettings
             ApplicationUser user = new ApplicationUser
             {
-                FirstName = _user.FirstName,
-                LastName = _user.LastName,
                 Email = _user.Email,
                 NormalizedEmail = _user.Email.ToUpper(),
                 UserName = _user.UserName,

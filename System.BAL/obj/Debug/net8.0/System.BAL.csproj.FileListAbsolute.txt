@@ -8,6 +8,7 @@ E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.Genera
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.AssemblyInfoInputs.cache
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.AssemblyInfo.cs
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.csproj.CoreCompileInputs.cache
+E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.sourcelink.json
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.csproj.CopyComplete
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\System.BAL.dll
 E:\Windows\Underway\Project\System\System.BAL\obj\Debug\net8.0\refint\System.BAL.dll
