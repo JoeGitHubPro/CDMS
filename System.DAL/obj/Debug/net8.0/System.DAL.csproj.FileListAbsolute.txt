@@ -12,3 +12,4 @@ E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\refint\System.DAL
 E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.pdb
 E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.genruntimeconfig.cache
 E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\ref\System.DAL.dll
+E:\Windows\Underway\Project\System\System.DAL\obj\Debug\net8.0\System.DAL.sourcelink.json
