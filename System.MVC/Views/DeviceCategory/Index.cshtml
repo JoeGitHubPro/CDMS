@@ -27,6 +27,7 @@
                 <td>@item.CategoryName</td>
                 <td>@item.CategoryDescription</td>
                 <td>
+                    <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.CategoryID">Details</a> |
                     <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.CategoryID">Edit</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CategoryID">Delete</a>
                 </td>

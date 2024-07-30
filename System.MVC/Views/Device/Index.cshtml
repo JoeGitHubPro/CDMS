@@ -29,6 +29,7 @@
                 <td>@item.DeviceCategoryName</td>
                 <td>@item.DeviceSpecification</td>
                 <td>
+                    <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.DeviceID">Details</a> |
                     <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
                 </td>

@@ -27,6 +27,7 @@
                 <td>@item.ModelName</td>
                 <td>@item.INFO</td>
                 <td>
+                    <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.SpecificationID">Details</a> |
                     <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.SpecificationID">Edit</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.SpecificationID">Delete</a>
                 </td>

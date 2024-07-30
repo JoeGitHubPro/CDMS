@@ -33,6 +33,7 @@
                 <td>@item.LocationName</td>
                 <td>@item.Note</td>
                 <td>
+                    <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.SponsorshipID">Details</a> |
                     <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.SponsorshipID">Edit</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.SponsorshipID">Delete</a>
                 </td>

@@ -29,12 +29,6 @@ namespace System.MVC.Controllers
         }
         public IActionResult SetDefaultTheme()
         {
-            // Set the cookie for the selected theme
-            //Response.Cookies.Append("SelectedTheme", null, new CookieOptions
-            //{
-            //    Expires = DateTime.Now.AddDays(30),
-            //    Path = "/"
-            //});
 
             // Set TempData for immediate use if needed
             TempData["SelectedTheme"] = null;
@@ -45,13 +39,6 @@ namespace System.MVC.Controllers
         }
         public IActionResult SetTheme(string theme)
         {
-
-            // Set the cookie for the selected theme
-            //Response.Cookies.Append("SelectedTheme", theme, new CookieOptions
-            //{
-            //    Expires = DateTime.Now.AddDays(30),
-            //    Path = "/"
-            //});
 
             // Set TempData for immediate use if needed
             TempData["SelectedTheme"] = theme;
