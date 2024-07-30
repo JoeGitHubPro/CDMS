@@ -5,99 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - System.MVC</title>
 
-    @{
-        if (TempData.Peek("SelectedValue")?.ToString() == null)
-        {
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-
-        }else
-        {
-            <link rel="stylesheet" href="~/css/@TempData.Peek("SelectedValue").ToString()" />
-        }
+    @if (TempData.Peek("SelectedTheme")?.ToString() != null)
+    {
+        <link rel="stylesheet" href="~/css/@TempData.Peek("SelectedTheme")?.ToString()" />
     }
-
-
-
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <link rel="stylesheet" href="~/System.MVC.styles.css" asp-append-version="true" />
+
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
             <div class="container-fluid">
+
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">System.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                </button>                  
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DeviceCategory" asp-action="Index">Device Category</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Device" asp-action="Index">Device</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DeviceSpecifications" asp-action="Index">DeviceSpecifications</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Index">Location</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Sponsorship" asp-action="Index">Sponsorship</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ApplicationUser" asp-action="Index">ApplicationUser</a>
-                        </li>
-                         @await Html.PartialAsync("_StaticSelect") 
-                        @* <partial name="_StaticSelectPartial.cshtml" /> *@
+
+                        <partial name="_ThemeSelect" />
+
                     </ul>
+                   
                     <partial name="_LoginPartial" />
                 </div>
             </div>
+
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted mt-auto py-3 bg-light">
         <div class="container">
             &copy; 2024 - System.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    <script>
-        $(document).ready(function () {
-            $('#staticSelect').change(function () {
-                var selectedValue = $(this).val();
-                $.ajax({
-                    url: '@Url.Action("StoreSelectedValue", "Home")',
-                    type: 'POST',
-                    data: { selectedValue: selectedValue },
-                    success: function (response) {
-                        location.reload(); // Reload the page on success
-                    },
-                    error: function (error) {
-                        console.error("Error storing value in TempData: " + error);
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 </html>
