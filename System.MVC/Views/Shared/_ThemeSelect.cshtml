@@ -1,38 +1,4 @@
-﻿@*
-<li id="themeSelect" class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        SelectedTheme
-    </a>
-    <ul class="dropdown-menu-l" aria-labelledby="navbarDropdown">
-
-        @for (int i = 1; i <= 26; i++)
-        {
-          string theme = $"bootstrap.min ({i}).css";
-            <li>
-                <a class="dropdown-item" asp-route-theme="@theme" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme @i</a>
-        </li>
-        }
-    </ul>
-</li>
- *@
-
-@*   @{string theme = $"bootstrap.min (1).css";}
-<div class="btn-group dropright">
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropright
-    </button>
-    <div class="dropdown-menu-l">
-        <a class="dropdown-item" asp-route-theme="@theme" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme 1</a>
-        <a class="dropdown-item" asp-route-theme="@theme" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme 1</a>
-        <a class="dropdown-item" asp-route-theme="@theme" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme 1</a>
-
-    </div>
-</div> *@
-
-
-
-
-<!-- Dropdown -->
+﻿<!-- Dropdown -->
 <li class="nav-item dropdown">
     <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
@@ -56,6 +22,9 @@
         </li>
         <li>
             <a class="dropdown-item" asp-area="" asp-controller="ApplicationUser" asp-action="Index">Application User</a>
+        </li>  
+        <li>
+            <a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Index">Activities</a>
         </li>
         <li>
             <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="SetDefaultTheme">Set Default Theme</a>
@@ -92,13 +61,6 @@
                                 </li>
                             </ul>
                         </li> *@
-
-                    <li>
-                        <a class="dropdown-item" href="#">Submenu item 4</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Submenu item 5</a>
-                    </li>
                 </ul>
             </li>
 

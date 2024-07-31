@@ -12,6 +12,7 @@ namespace System.DAL.Data
         public DbSet<Sponsorship> Sponsorships { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<DeviceSpecifications> DeviceSpecifications { get; set; }
+        public DbSet<Activity> Activities { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
