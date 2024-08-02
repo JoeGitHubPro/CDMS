@@ -11,7 +11,6 @@ namespace System.DAL.Data
         public DbSet<Device> Devices { get; set; }
         public DbSet<Sponsorship> Sponsorships { get; set; }
         public DbSet<Location> Locations { get; set; }
-        public DbSet<DeviceSpecifications> DeviceSpecifications { get; set; }
         public DbSet<Activity> Activities { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -24,10 +23,6 @@ namespace System.DAL.Data
                 .WithMany(c => c.Devices)
                 .HasForeignKey(d => d.DeviceCategory);
 
-            builder.Entity<Device>()
-                .HasOne(d => d.Specification)
-                .WithMany()
-                .HasForeignKey(d => d.DeviceSpecification);
 
             builder.Entity<Sponsorship>()
                 .HasOne(s => s.User)

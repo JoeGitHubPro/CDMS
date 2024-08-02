@@ -1,17 +1,14 @@
-﻿using System.DAL.Models;
-
-namespace System.MVC.ViewModels
+﻿namespace System.MVC.ViewModels
 {
     public class DeviceViewModel
     {
-        public string DeviceID { get; set; }
-        public int DeviceCategory { get; set; }
-        public string DeviceName { get; set; }
-        public int? DeviceSpecificationId { get; set; }
-        public DeviceSpecifications? DeviceSpecification { get; set; }
+        public string ID { get; set; }
+        public int Category { get; set; }
+        public string Name { get; set; }
+        public string? INFO { get; set; }
 
         // Additional fields for display purposes
-        public string? DeviceCategoryName { get; set; }
+        public string? CategoryName { get; set; }
     }
 
 }

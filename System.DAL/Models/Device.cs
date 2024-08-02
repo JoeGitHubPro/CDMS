@@ -8,10 +8,9 @@ namespace System.DAL.Models
         public string DeviceID { get; set; }
         public int DeviceCategory { get; set; }
         public string DeviceName { get; set; }
-        public int? DeviceSpecification { get; set; }
+        public string? DeviceINFO { get; set; }
 
         public DeviceCategory Category { get; set; }
-        public DeviceSpecifications Specification { get; set; }
     }
 
 }

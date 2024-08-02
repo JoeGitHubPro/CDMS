@@ -183,18 +183,16 @@ namespace System.DAL.Migrations
                     b.Property<int>("DeviceCategory")
                         .HasColumnType("int");
 
+                    b.Property<string>("DeviceINFO")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("DeviceName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DeviceSpecification")
-                        .HasColumnType("int");
-
                     b.HasKey("DeviceID");
 
                     b.HasIndex("DeviceCategory");
-
-                    b.HasIndex("DeviceSpecification");
 
                     b.ToTable("Devices");
                 });
@@ -217,26 +215,6 @@ namespace System.DAL.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("DeviceCategories");
-                });
-
-            modelBuilder.Entity("System.DAL.Models.DeviceSpecifications", b =>
-                {
-                    b.Property<int>("SpecificationID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SpecificationID"));
-
-                    b.Property<string>("INFO")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ModelName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("SpecificationID");
-
-                    b.ToTable("DeviceSpecifications");
                 });
 
             modelBuilder.Entity("System.DAL.Models.Identity.ApplicationUser", b =>
@@ -416,13 +394,7 @@ namespace System.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("System.DAL.Models.DeviceSpecifications", "Specification")
-                        .WithMany()
-                        .HasForeignKey("DeviceSpecification");
-
                     b.Navigation("Category");
-
-                    b.Navigation("Specification");
                 });
 
             modelBuilder.Entity("System.DAL.Models.Sponsorship", b =>

@@ -13,10 +13,10 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Device ID</th>
-            <th>Device Name</th>
-            <th>Device Category</th>
-            <th>Device Specification</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>INFO</th>
             <th></th>
         </tr>
     </thead>
@@ -24,14 +24,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.DeviceID</td>
-                <td>@item.DeviceName</td>
-                <td>@item.DeviceCategoryName</td>
-                <td>@item.DeviceSpecification</td>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.CategoryName</td>
+                <td>@item?.INFO</td>
                 <td>
-                    <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.DeviceID">Details</a> |
-                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
+                    <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                 </td>
             </tr>
         }

@@ -20,19 +20,16 @@ namespace System.MVC.Controllers
         public async Task<IActionResult> Index()
         {
             var devices = await _context.Devices
-                .Join(
-                    _context.DeviceCategories,
-                    device => device.DeviceCategory,
-                    category => category.CategoryID,
-                    (device, category) => new DeviceViewModel
-                    {
-                        DeviceID = device.DeviceID,
-                        DeviceCategory = device.DeviceCategory,
-                        DeviceName = device.DeviceName,
-                        DeviceSpecificationId = device.DeviceSpecification,
-                        DeviceCategoryName = category.CategoryName
-                    }
-                ).ToListAsync();
+                            .Include(d => d.Category)
+                            .Select(d => new DeviceViewModel
+                            {
+                                ID = d.DeviceID,
+                                CategoryName = d.Category.CategoryName,
+                                Name = d.DeviceName,
+                                INFO = d.DeviceINFO
+                            })
+                            .ToListAsync();
+
 
             return View(devices);
         }
@@ -46,21 +43,15 @@ namespace System.MVC.Controllers
             }
 
             var device = await _context.Devices
-                .Join(
-                    _context.DeviceCategories,
-                    d => d.DeviceCategory,
-                    c => c.CategoryID,
-                    (d, c) => new { Device = d, Category = c }
-                )
-                .Select(dc => new DeviceViewModel
-                {
-                    DeviceID = dc.Device.DeviceID,
-                    DeviceCategory = dc.Device.DeviceCategory,
-                    DeviceName = dc.Device.DeviceName,
-                    DeviceSpecificationId = dc.Device.DeviceSpecification,
-                    DeviceCategoryName = dc.Category.CategoryName
-                })
-                .FirstOrDefaultAsync(m => m.DeviceID == id);
+                           .Include(d => d.Category)
+                           .Select(d => new DeviceViewModel
+                           {
+                               ID = d.DeviceID,
+                               CategoryName = d.Category.CategoryName,
+                               Name = d.DeviceName,
+                               INFO = d.DeviceINFO
+                           })
+                           .FirstOrDefaultAsync(m => m.ID == id);
 
             if (device == null)
             {
@@ -86,17 +77,17 @@ namespace System.MVC.Controllers
             {
                 var device = new Device
                 {
-                    DeviceID = deviceViewModel.DeviceID,
-                    DeviceCategory = deviceViewModel.DeviceCategory,
-                    DeviceName = deviceViewModel.DeviceName,
-                    DeviceSpecification = deviceViewModel.DeviceSpecificationId
+                    DeviceID = deviceViewModel.ID,
+                    DeviceCategory = deviceViewModel.Category,
+                    DeviceName = deviceViewModel.Name,
+                    DeviceINFO = deviceViewModel.INFO
                 };
 
                 _context.Add(device);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DeviceCategory"] = new SelectList(_context.DeviceCategories, "CategoryID", "CategoryName", deviceViewModel.DeviceCategory);
+            ViewData["DeviceCategory"] = new SelectList(_context.DeviceCategories, "CategoryID", "CategoryName", deviceViewModel.Category);
             return View(deviceViewModel);
         }
 
@@ -111,19 +102,19 @@ namespace System.MVC.Controllers
             var device = await _context.Devices
                 .Select(d => new DeviceViewModel
                 {
-                    DeviceID = d.DeviceID,
-                    DeviceCategory = d.DeviceCategory,
-                    DeviceName = d.DeviceName,
-                    DeviceSpecificationId = d.DeviceSpecification
+                    ID = d.DeviceID,
+                    Category = d.DeviceCategory,
+                    Name = d.DeviceName,
+                    INFO = d.DeviceINFO
                 })
-                .FirstOrDefaultAsync(m => m.DeviceID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (device == null)
             {
                 return NotFound();
             }
 
-            ViewData["DeviceCategory"] = new SelectList(_context.DeviceCategories, "CategoryID", "CategoryName", device.DeviceCategory);
+            ViewData["DeviceCategory"] = new SelectList(_context.DeviceCategories, "CategoryID", "CategoryName", device.Category);
             return View(device);
         }
 
@@ -132,7 +123,7 @@ namespace System.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, DeviceViewModel deviceViewModel)
         {
-            if (id != deviceViewModel.DeviceID)
+            if (id != deviceViewModel.ID)
             {
                 return NotFound();
             }
@@ -142,16 +133,16 @@ namespace System.MVC.Controllers
                 try
                 {
                     var device = await _context.Devices.FindAsync(id);
-                    device.DeviceCategory = deviceViewModel.DeviceCategory;
-                    device.DeviceName = deviceViewModel.DeviceName;
-                    device.DeviceSpecification = deviceViewModel.DeviceSpecificationId;
+                    device.DeviceCategory = deviceViewModel.Category;
+                    device.DeviceName = deviceViewModel.Name;
+                    device.DeviceINFO = deviceViewModel.INFO;
 
                     _context.Update(device);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DeviceExists(deviceViewModel.DeviceID))
+                    if (!DeviceExists(deviceViewModel.ID))
                     {
                         return NotFound();
                     }
@@ -162,7 +153,7 @@ namespace System.MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DeviceCategory"] = new SelectList(_context.DeviceCategories, "CategoryID", "CategoryName", deviceViewModel.DeviceCategory);
+            ViewData["DeviceCategory"] = new SelectList(_context.DeviceCategories, "CategoryID", "CategoryName", deviceViewModel.Category);
             return View(deviceViewModel);
         }
 
@@ -175,21 +166,14 @@ namespace System.MVC.Controllers
             }
 
             var device = await _context.Devices
-                .Join(
-                    _context.DeviceCategories,
-                    d => d.DeviceCategory,
-                    c => c.CategoryID,
-                    (d, c) => new { Device = d, Category = c }
-                )
-                .Select(dc => new DeviceViewModel
+                .Select(d => new DeviceViewModel
                 {
-                    DeviceID = dc.Device.DeviceID,
-                    DeviceCategory = dc.Device.DeviceCategory,
-                    DeviceName = dc.Device.DeviceName,
-                    DeviceSpecificationId = dc.Device.DeviceSpecification,
-                    DeviceCategoryName = dc.Category.CategoryName
+                    ID = d.DeviceID,
+                    Category = d.DeviceCategory,
+                    Name = d.DeviceName,
+                    INFO = d.DeviceINFO
                 })
-                .FirstOrDefaultAsync(m => m.DeviceID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (device == null)
             {
