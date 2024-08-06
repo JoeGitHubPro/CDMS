@@ -8,6 +8,7 @@ using System.MVC.ViewModels;
 
 namespace System.MVC.Controllers
 {
+    [Authorize]
     public class ActivitiesController : Controller
     {
         private readonly AppDbContext _context;

@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
-using System.DAL.Models.Identity;
 
 namespace System.MVC.Areas.Identity.Pages.Account
 {
@@ -63,6 +62,7 @@ namespace System.MVC.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
+            [Display(Name = "UserName or Email")]
             public string EmailOrUserName { get; set; }
 
             /// <summary>
@@ -121,7 +121,7 @@ namespace System.MVC.Areas.Identity.Pages.Account
                     user = await _userManager.FindByNameAsync(Input.EmailOrUserName);
                 }
 
-                var result = await _signInManager.PasswordSignInAsync(user, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");

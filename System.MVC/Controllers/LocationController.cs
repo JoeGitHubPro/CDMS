@@ -6,6 +6,7 @@ using System.MVC.ViewModels;
 
 namespace System.MVC.Controllers
 {
+    [Authorize]
     public class LocationController : Controller
     {
         private readonly AppDbContext _context;

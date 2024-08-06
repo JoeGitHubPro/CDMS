@@ -7,6 +7,7 @@ using System.MVC.ViewModels;
 
 namespace System.MVC.Controllers
 {
+    [Authorize]
     public class DeviceController : Controller
     {
         private readonly AppDbContext _context;

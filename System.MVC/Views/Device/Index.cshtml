@@ -10,7 +10,9 @@
     <a class="btn btn-primary" asp-action="Create">Create New</a>
 </p>
 
-<table class="table table-striped">
+<input class="form-control" type="text" id="DevicesSearchInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<table id="DevicesTable" class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
@@ -37,3 +39,34 @@
         }
     </tbody>
 </table>
+
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("DevicesSearchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("DevicesTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            // Skip the header row
+            if (i === 0) continue;
+
+            tr[i].style.display = "none"; // Hide the row initially
+            td = tr[i].getElementsByTagName("td");
+
+            // Loop through each cell in the row
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = ""; // Show the row if a match is found
+                        break; // No need to check further cells in this row
+                    }
+                }
+            }
+        }
+    }
+</script>

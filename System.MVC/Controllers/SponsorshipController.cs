@@ -7,6 +7,7 @@ using System.MVC.ViewModels;
 
 namespace System.MVC.Controllers
 {
+    [Authorize]
     public class SponsorshipController : Controller
     {
         private readonly AppDbContext _context;

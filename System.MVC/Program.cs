@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using System.DAL.Data;
+using System.MVC.Services;
 
 
 namespace System.MVC
@@ -10,16 +12,28 @@ namespace System.MVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var connectionString = builder.Configuration.GetConnectionString("AppDbContextConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");
+            var localConnectionString = builder.Configuration.GetConnectionString("LocalConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");
 
-            builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
+            optionsBuilder.UseSqlServer(localConnectionString));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+            var lockoutOptions = new LockoutOptions()
+            {
+                AllowedForNewUsers = true,
+                DefaultLockoutTimeSpan = TimeSpan.FromHours(1),
+                MaxFailedAccessAttempts = 5
+            };
+
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => { options.SignIn.RequireConfirmedAccount = false; options.Lockout = lockoutOptions; })
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+
+
+            //EmailService
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
 
             builder.Services.AddControllersWithViews();
 

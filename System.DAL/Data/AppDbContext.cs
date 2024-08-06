@@ -44,9 +44,6 @@ namespace System.DAL.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //TODO : move connection string into presentation layer
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-T4OMHBE\\SQLEXPRESS;Initial Catalog=CDMS; Integrated Security = SSPI ; TrustServerCertificate = True");
-
             base.OnConfiguring(optionsBuilder);
         }
 
