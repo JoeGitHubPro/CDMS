@@ -121,6 +121,12 @@ namespace System.MVC.Areas.Identity.Pages.Account
                     user = await _userManager.FindByNameAsync(Input.EmailOrUserName);
                 }
 
+                if (user is null)
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return Page();
+                }
+
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {

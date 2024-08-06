@@ -6,14 +6,19 @@ namespace System.MVC.Services
 {
     public class EmailSender : IEmailSender
     {
+        private readonly string _senderMail;
+        private readonly string _senderMailpassword;
+        public EmailSender(string senderMail, string senderMailpassword)
+        {
+            _senderMail = senderMail;
+            _senderMailpassword = senderMailpassword;
+        }
 
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var fromMail = "Sender Mail";
-            var fromPassword = "Sender Mail password";
 
             var message = new MailMessage();
-            message.From = new MailAddress(fromMail);
+            message.From = new MailAddress(_senderMail);
             message.Subject = subject;
             message.To.Add(email);
             message.Body = htmlMessage;
@@ -22,7 +27,7 @@ namespace System.MVC.Services
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential(fromMail, fromPassword),
+                Credentials = new NetworkCredential(_senderMail, _senderMailpassword),
                 EnableSsl = true
             };
 

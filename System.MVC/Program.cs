@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using System.BAL.StartUp;
 using System.DAL.Data;
+using System.MVC.Models.Settings;
 using System.MVC.Services;
 
 
@@ -32,12 +33,12 @@ namespace System.MVC
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
 
-            //Database Initialization 
+            #region DatabaseInitialization 
+
             using (var scope = builder.Services.BuildServiceProvider().CreateAsyncScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-                // var user = scope.ServiceProvider.GetRequiredService<ApplicationUser>();
 
                 ApplicationUser? user = builder.Configuration.GetSection("User").Get<ApplicationUser>();
                 string? userPassword = builder.Configuration.GetSection("Password").Get<string>();
@@ -52,9 +53,17 @@ namespace System.MVC
                     initialize.InitializeUsers();
                 }
             }
+            #endregion
 
-            //EmailService
-            builder.Services.AddTransient<IEmailSender, EmailSender>();
+            #region EmailService
+
+            HostMail? mail = builder.Configuration.GetSection("HostMail").Get<HostMail>();
+
+            if (mail is not null)
+                builder.Services.AddSingleton<IEmailSender>(new EmailSender(mail.Mail, mail.Password));
+
+            #endregion
+
 
             builder.Services.AddControllersWithViews();
 
