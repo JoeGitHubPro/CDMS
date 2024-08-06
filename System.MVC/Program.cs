@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using System.BAL.StartUp;
 using System.DAL.Data;
 using System.MVC.Services;
 
@@ -31,6 +32,26 @@ namespace System.MVC
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
 
+            //Database Initialization 
+            using (var scope = builder.Services.BuildServiceProvider().CreateAsyncScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+                // var user = scope.ServiceProvider.GetRequiredService<ApplicationUser>();
+
+                ApplicationUser? user = builder.Configuration.GetSection("User").Get<ApplicationUser>();
+                string? userPassword = builder.Configuration.GetSection("Password").Get<string>();
+
+                if (context.Database.GetPendingMigrations().Any())
+                    context.Database.Migrate();
+
+                if (context is not null && user is not null)
+                {
+                    Initialization initialize = new Initialization(context, user, userPassword);
+                    initialize.InitializeRoles();
+                    initialize.InitializeUsers();
+                }
+            }
 
             //EmailService
             builder.Services.AddTransient<IEmailSender, EmailSender>();

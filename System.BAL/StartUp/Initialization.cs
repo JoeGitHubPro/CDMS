@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 using System.DAL.Data;
 using System.DAL.Models.Identity;
 
@@ -10,22 +9,16 @@ namespace System.BAL.StartUp
     {
         private AppDbContext _context;
         private readonly ApplicationUser _user;
+        private readonly string _userPassword;
 
-        public Initialization(AppDbContext context, ApplicationUser user)
+        public Initialization(AppDbContext context, ApplicationUser user, string userPassword)
         {
             _context = context;
             _user = user;
-
+            _userPassword = userPassword;
         }
 
-        public async Task InitializeAll()
-        {
-            await InitializeRoles();
-
-            await InitializeUsers();
-        }
-
-        public async Task InitializeRoles()
+        public void InitializeRoles()
         {
 
             if (_context is null)
@@ -47,18 +40,16 @@ namespace System.BAL.StartUp
                         ConcurrencyStamp = Guid.NewGuid().ToString()
                     };
 
-                    await roleStore.CreateAsync(newRole);
+                    roleStore.CreateAsync(newRole).Wait();
                 }
 
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
 
         }
 
-        public async Task InitializeUsers()
+        public void InitializeUsers()
         {
-            //TODO
-            //Get password from json appsettings
             ApplicationUser user = new ApplicationUser
             {
                 Email = _user.Email,
@@ -72,26 +63,25 @@ namespace System.BAL.StartUp
 
             };
 
-            if (await _context.Users.AnyAsync(u => u.UserName == user.UserName))
+            if (_context.Users.Any(u => u.UserName == user.UserName))
                 return;
 
 
             PasswordHasher<ApplicationUser> password = new PasswordHasher<ApplicationUser>();
-            string hashed = password.HashPassword(user, "7nJ4oq7@f*Dg");
+
+            string hashed = password.HashPassword(user, _userPassword is null ? "7nJ4oq7@f*Dg" : _userPassword);
             user.PasswordHash = hashed;
 
             UserStore<ApplicationUser> userStore = new UserStore<ApplicationUser>(_context);
-            var result = userStore.CreateAsync(user);
-            _context.SaveChangesAsync().Wait();
+            userStore.CreateAsync(user).Wait();
+            _context.SaveChanges();
 
-            string? role = await _context.Roles.Where(a => a.Name == Roles.SuperAdmin).Select(a => a.Id).FirstOrDefaultAsync();
+            string? role = _context.Roles.Where(a => a.Name == Roles.SuperAdmin).Select(a => a.Id).FirstOrDefault();
 
             if (role is not null)
-                await _context.UserRoles.AddAsync(new IdentityUserRole<string> { UserId = user.Id, RoleId = role });
+                _context.UserRoles.Add(new IdentityUserRole<string> { UserId = user.Id, RoleId = role });
 
-
-
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
         }
     }

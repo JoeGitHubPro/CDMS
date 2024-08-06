@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Api.Identity.Services;
 using System.Api.Identity.Settings;
-using System.BAL.StartUp;
 using System.DAL.Data;
 using System.DAL.Models.Identity;
 using System.Text;
@@ -35,8 +34,8 @@ namespace System.Api
                 ApplicationUser user = new();
                 builder.Configuration.GetSection(nameof(ApplicationUser)).Bind(user);
 
-                Initialization initialize = new Initialization(dbContext, user);
-                initialize.InitializeRoles().Wait();
+                //Initialization initialize = new Initialization(dbContext, user);
+                //initialize.InitializeRoles().Wait();
             }
 
             #endregion
