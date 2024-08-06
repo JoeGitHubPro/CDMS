@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.DAL.Data;
@@ -11,10 +12,12 @@ namespace System.MVC.Controllers
     public class SponsorshipController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IEmailSender _emailSender;
 
-        public SponsorshipController(AppDbContext context)
+        public SponsorshipController(AppDbContext context, IEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
         // GET: Sponsorship
@@ -103,6 +106,7 @@ namespace System.MVC.Controllers
 
                 _context.Add(sponsorship);
                 await _context.SaveChangesAsync();
+                await Notify(sponsorship.SponsorshipID);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -182,6 +186,7 @@ namespace System.MVC.Controllers
 
                     _context.Update(sponsorship);
                     await _context.SaveChangesAsync();
+                    await Notify(sponsorship.SponsorshipID);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -242,6 +247,23 @@ namespace System.MVC.Controllers
             _context.Sponsorships.Remove(sponsorship);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        private async Task Notify(int sponsorshipId)
+        {
+
+            var sponsorship = await _context.Sponsorships.Include(a => a.User).Include(a => a.Device).Include(a => a.Location).SingleOrDefaultAsync(s => s.SponsorshipID == sponsorshipId);
+            try
+            {
+                await _emailSender.SendEmailAsync(
+                sponsorship.User.Email,
+                "Sponsorship Notification",
+                $"Dear {sponsorship.User.UserName} ,\n A new device has been added to your custody \n device no. {sponsorship.DeviceId} \n device name {sponsorship.Device.DeviceName} \n at location {sponsorship.Location.LocationName} \n at {sponsorship.Date} \n {sponsorship.Note}");
+
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
         }
         private bool DeviceExists(string deviceId)
         {
