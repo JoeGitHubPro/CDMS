@@ -82,6 +82,16 @@ namespace System.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (DeviceExists(viewModel.DeviceId))
+                {
+                    ModelState.AddModelError("DeviceId", "Repeated Device");
+                    ViewData["Users"] = new SelectList(_context.Users.ToList(), "Id", "UserName");
+                    ViewData["Devices"] = new SelectList(_context.Devices.ToList(), "DeviceID", "DeviceName");
+                    ViewData["Locations"] = new SelectList(_context.Locations.ToList(), "LocationID", "LocationName");
+                    return View(viewModel);
+
+                }
+
                 var sponsorship = new Sponsorship
                 {
                     UserId = viewModel.UserId,
@@ -152,6 +162,15 @@ namespace System.MVC.Controllers
 
             if (ModelState.IsValid)
             {
+                if (DeviceExists(viewModel.DeviceId))
+                {
+                    ModelState.AddModelError("DeviceId", "Repeated Device");
+                    ViewData["Users"] = new SelectList(_context.Users.ToList(), "Id", "UserName");
+                    ViewData["Devices"] = new SelectList(_context.Devices.ToList(), "DeviceID", "DeviceName");
+                    ViewData["Locations"] = new SelectList(_context.Locations.ToList(), "LocationID", "LocationName");
+                    return View(viewModel);
+
+                }
                 try
                 {
                     var sponsorship = await _context.Sponsorships.FindAsync(id);
@@ -224,7 +243,10 @@ namespace System.MVC.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        private bool DeviceExists(string deviceId)
+        {
+            return _context.Sponsorships.Any(a => a.DeviceId == deviceId);
+        }
         private bool SponsorshipExists(int id)
         {
             return _context.Sponsorships.Any(e => e.SponsorshipID == id);

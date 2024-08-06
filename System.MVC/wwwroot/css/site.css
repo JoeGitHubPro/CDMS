@@ -167,6 +167,9 @@ body {
 }
 
 /*=========================== Main Functionality ========================*/
+.form-group {
+    margin-bottom: 1rem; /* equivalent to mb-3 */
+}
 
 .btn {
     margin-top: 6px;
