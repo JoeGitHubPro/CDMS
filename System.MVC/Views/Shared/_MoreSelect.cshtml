@@ -1,30 +1,30 @@
 ﻿<!-- Dropdown -->
 <li class="nav-item dropdown">
-    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+    <a data-mdb-dropdown-init class="nav-link text-light dropdown-toggle" href="#"
        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
         More
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <li>
-            <a class="dropdown-item" asp-area="" asp-controller="DeviceCategory" asp-action="Index">Device Category</a>
+            <a class="dropdown-item text-dark" asp-area="" asp-controller="DeviceCategory" asp-action="Index">Device Category</a>
         </li>
         <li>
-            <a class="dropdown-item" asp-area="" asp-controller="Device" asp-action="Index">Device</a>
+            <a class="dropdown-item text-dark" asp-area="" asp-controller="Device" asp-action="Index">Device</a>
         </li>
         <li>
-            <a class="dropdown-item" asp-area="" asp-controller="Location" asp-action="Index">Location</a>
+            <a class="dropdown-item text-dark" asp-area="" asp-controller="Location" asp-action="Index">Location</a>
         </li>
         <li>
-            <a class="dropdown-item" asp-area="" asp-controller="Sponsorship" asp-action="Index">Sponsorship</a>
+            <a class="dropdown-item text-dark" asp-area="" asp-controller="Sponsorship" asp-action="Index">Sponsorship</a>
         </li>
         <li>
-            <a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Index">Activities</a>
+            <a class="dropdown-item text-dark" asp-area="" asp-controller="Activities" asp-action="Index">Activities</a>
         </li>
         <li>
             <div class="dropdown-divider"></div>
         </li>
         <li>
-            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="SetDefaultTheme">Set Default Theme</a>
+            <a class="dropdown-item text-dark" asp-area="" asp-controller="Home" asp-action="SetDefaultTheme">Set Default Theme</a>
         </li>
 
         <li>
@@ -33,16 +33,16 @@
             </a>
             <ul class="dropdown-menu dropdown-submenu">
                 <li>
-                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="SetDefaultTheme">Defualt</a>
+                    <a class="dropdown-item text-dark" asp-area="" asp-controller="Home" asp-action="SetDefaultTheme">Defualt</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" asp-route-theme="bootstrap.min.css" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme 0</a>
+                    <a class="dropdown-item text-dark" asp-route-theme="bootstrap.min.css" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme 0</a>
                 </li>
                 @for (int i = 1; i <= 26; i++)
                 {
                     string theme = $"bootstrap.min ({i}).css";
                     <li>
-                        <a class="dropdown-item" asp-route-theme="@theme" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme @i</a>
+                        <a class="dropdown-item text-dark" asp-route-theme="@theme" asp-area="" asp-controller="Home" asp-action="SetTheme">Theme @i</a>
                     </li>
                 }
 
@@ -66,7 +66,7 @@
             <div class="dropdown-divider"></div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
         </li>
     </ul>
 </li>

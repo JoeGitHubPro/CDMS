@@ -1,5 +1,5 @@
 /**
- * TinyMCE version 7.2.1 (2024-07-03)
+ * TinyMCE version 6.3.2 (2023-02-22)
  */
 
 (function () {
@@ -293,7 +293,7 @@
       });
       registerOption('emoticons_images_url', {
         processor: 'string',
-        default: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/72x72/'
+        default: 'https://twemoji.maxcdn.com/v/13.0.1/72x72/'
       });
     };
     const getEmojiDatabase = option('emoticons_database');
@@ -551,29 +551,17 @@
       });
     };
 
-    const onSetupEditable = editor => api => {
-      const nodeChanged = () => {
-        api.setEnabled(editor.selection.isEditable());
-      };
-      editor.on('NodeChange', nodeChanged);
-      nodeChanged();
-      return () => {
-        editor.off('NodeChange', nodeChanged);
-      };
-    };
     const register = editor => {
       const onAction = () => editor.execCommand('mceEmoticons');
       editor.ui.registry.addButton('emoticons', {
         tooltip: 'Emojis',
         icon: 'emoji',
-        onAction,
-        onSetup: onSetupEditable(editor)
+        onAction
       });
       editor.ui.registry.addMenuItem('emoticons', {
         text: 'Emojis...',
         icon: 'emoji',
-        onAction,
-        onSetup: onSetupEditable(editor)
+        onAction
       });
     };
 
@@ -587,7 +575,6 @@
         register(editor);
         init(editor, database);
         setup(editor);
-        return { getAllEmojis: () => database.waitForLoad().then(() => database.listAll()) };
       });
     };
 

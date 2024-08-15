@@ -9,12 +9,40 @@
       "PackagePath": "staticwebassets\\Home\\assets\\css\\style.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\apple-touch-icon.png",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\apple-touch-icon.png"
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\1.jpeg",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\1.jpeg"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\card.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\card.jpg"
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\2.jpeg",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\2.jpeg"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\A.jpeg",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\A.jpeg"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\B.jpeg",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\B.jpeg"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\E.jpg",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\E.jpg"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\SC.png",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\SC.png"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\Y.jpg",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\Y.jpg"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\Y2.jpeg",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\Y2.jpeg"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\Home\\assets\\img\\apple-touch-icon.png"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\favicon.png",
@@ -25,76 +53,8 @@
       "PackagePath": "staticwebassets\\Home\\assets\\img\\logo.png"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\messages-1.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\messages-1.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\messages-2.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\messages-2.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\messages-3.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\messages-3.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\news-1.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\news-1.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\news-2.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\news-2.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\news-3.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\news-3.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\news-4.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\news-4.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\news-5.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\news-5.jpg"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\not-found.svg",
       "PackagePath": "staticwebassets\\Home\\assets\\img\\not-found.svg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\product-1.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\product-1.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\product-2.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\product-2.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\product-3.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\product-3.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\product-4.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\product-4.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\product-5.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\product-5.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\profile-img.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\profile-img.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\slides-1.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\slides-1.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\slides-2.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\slides-2.jpg"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\img\\slides-3.jpg",
-      "PackagePath": "staticwebassets\\Home\\assets\\img\\slides-3.jpg"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\js\\main.js",
@@ -133,24 +93,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\ar.json"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\be-cyrl.json",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\be-cyrl.json"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\be-latn.json",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\be-latn.json"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\ca.json",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\ca.json"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\cs.json",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\cs.json"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\da.json",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\da.json"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\de.json",
@@ -233,10 +181,6 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\lv.json"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\ms.json",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\ms.json"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\nb.json",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\nb.json"
     },
@@ -293,10 +237,6 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\ua.json"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\vi.json",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\vi.json"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\apexcharts\\locales\\zh-cn.json",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\apexcharts\\locales\\zh-cn.json"
     },
@@ -311,10 +251,6 @@
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.scss",
@@ -753,10 +689,6 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\helpers\\helpers.config.d.ts"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\helpers\\helpers.config.types.d.ts",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\helpers\\helpers.config.types.d.ts"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\helpers\\helpers.core.d.ts",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\helpers\\helpers.core.d.ts"
     },
@@ -803,6 +735,10 @@
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\helpers\\index.d.ts",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\helpers\\index.d.ts"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\helpers\\types.d.ts",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\helpers\\types.d.ts"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\index.d.ts",
@@ -941,6 +877,18 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\types\\geometric.d.ts"
     },
     {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\types\\helpers\\helpers.canvas.d.ts",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\types\\helpers\\helpers.canvas.d.ts"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\types\\helpers\\helpers.segment.d.ts",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\types\\helpers\\helpers.segment.d.ts"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\types\\helpers\\index.d.ts",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\types\\helpers\\index.d.ts"
+    },
+    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\chart.js\\types\\index.d.ts",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\chart.js\\types\\index.d.ts"
     },
@@ -975,18 +923,6 @@
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\echarts\\echarts.esm.min.js",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\echarts\\echarts.esm.min.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\echarts\\echarts.esm.min.mjs",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\echarts\\echarts.esm.min.mjs"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\echarts\\echarts.esm.mjs",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\echarts\\echarts.esm.mjs"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\echarts\\echarts.esm.mjs.map",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\echarts\\echarts.esm.mjs.map"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\echarts\\echarts.js",
@@ -1037,10 +973,6 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\echarts\\extension\\dataTool.min.js"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\echarts\\package.json",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\echarts\\package.json"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\php-email-form\\validate.js",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\php-email-form\\validate.js"
     },
@@ -1049,48 +981,28 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.bubble.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.bubble.css.map",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.bubble.css.map"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.core.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.core.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.core.css.map",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.core.css.map"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.core.js",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.core.js"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.core.js.LICENSE.txt",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.core.js.LICENSE.txt"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.core.js.map",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.core.js.map"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.js",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.js"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.js.LICENSE.txt",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.js.LICENSE.txt"
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.min.js",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.min.js"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.js.map",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.js.map"
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.min.js.map",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.min.js.map"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.snow.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.snow.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\quill\\quill.snow.css.map",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\quill\\quill.snow.css.map"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\remixicon\\remixicon.css",
@@ -1099,10 +1011,6 @@
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\remixicon\\remixicon.eot",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\remixicon\\remixicon.eot"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\remixicon\\remixicon.glyph.json",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\remixicon\\remixicon.glyph.json"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\remixicon\\remixicon.less",
@@ -1165,8 +1073,8 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\icons\\default\\index.js"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\license.md",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\license.md"
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\license.txt",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\license.txt"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\models\\dom\\index.js",
@@ -1183,18 +1091,6 @@
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\package.json",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\package.json"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\accordion\\index.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\accordion\\index.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\accordion\\plugin.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\accordion\\plugin.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\accordion\\plugin.min.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\accordion\\plugin.min.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\advlist\\index.js",
@@ -1347,162 +1243,6 @@
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\index.js",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\index.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ar.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ar.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\bg_BG.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\bg_BG.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ca.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ca.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\cs.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\cs.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\da.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\da.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\de.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\de.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\el.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\el.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\en.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\en.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\es.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\es.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\eu.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\eu.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fa.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fa.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fi.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fi.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fr_FR.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\fr_FR.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\he_IL.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\he_IL.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hi.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hi.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hr.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hr.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hu_HU.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\hu_HU.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\id.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\id.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\it.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\it.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ja.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ja.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\kk.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\kk.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ko_KR.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ko_KR.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ms.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ms.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nb_NO.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nb_NO.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nl.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\nl.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pl.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pl.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_BR.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_BR.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_PT.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\pt_PT.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ro.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ro.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ru.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\ru.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sk.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sk.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sl_SI.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sl_SI.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sv_SE.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\sv_SE.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\th_TH.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\th_TH.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\tr.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\tr.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\uk.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\uk.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\vi.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\vi.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_CN.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_CN.js"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_TW.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\help\\js\\i18n\\keynav\\zh_TW.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\help\\plugin.js",
@@ -1669,6 +1409,18 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\table\\plugin.min.js"
     },
     {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\template\\index.js",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\template\\index.js"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\template\\plugin.js",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\template\\plugin.js"
+    },
+    {
+      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\template\\plugin.min.js",
+      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\template\\plugin.min.js"
+    },
+    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\plugins\\visualblocks\\index.js",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\plugins\\visualblocks\\index.js"
     },
@@ -1709,20 +1461,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\dark\\content.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\dark\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\dark\\content.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\dark\\content.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\dark\\content.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\default\\content.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\default\\content.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\default\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\default\\content.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\default\\content.min.css",
@@ -1733,20 +1477,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\document\\content.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\document\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\document\\content.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\document\\content.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\document\\content.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5-dark\\content.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5-dark\\content.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5-dark\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5-dark\\content.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5-dark\\content.min.css",
@@ -1757,20 +1493,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5\\content.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5\\content.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5\\content.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\tinymce-5\\content.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\writer\\content.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\writer\\content.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\writer\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\content\\writer\\content.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\content\\writer\\content.min.css",
@@ -1785,16 +1513,8 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.inline.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.inline.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.inline.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.inline.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.inline.min.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\content.min.css",
@@ -1805,20 +1525,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.min.css",
@@ -1833,16 +1545,8 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.inline.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.inline.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.inline.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.inline.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.inline.min.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\content.min.css",
@@ -1853,20 +1557,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.min.css",
@@ -1881,16 +1577,8 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.min.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\content.min.css",
@@ -1901,20 +1589,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.min.css",
@@ -1929,16 +1609,8 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.inline.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.inline.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.inline.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.inline.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.inline.min.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\content.min.css",
@@ -1949,20 +1621,12 @@
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.css"
     },
     {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.js"
-    },
-    {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.min.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.min.css"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.css",
       "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.css"
-    },
-    {
-      "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.js",
-      "PackagePath": "staticwebassets\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.js"
     },
     {
       "Id": "E:\\Windows\\Underway\\Project\\System\\System.MVC\\wwwroot\\Home\\assets\\vendor\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.min.css",

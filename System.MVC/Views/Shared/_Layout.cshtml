@@ -19,15 +19,16 @@
     <link rel="stylesheet" href="~/System.MVC.styles.css" asp-append-version="true" />
 
 
-
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-primary mb-3" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-primary mb-3" data-bs-theme="light">
+
 
             <div class="container-fluid">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CDMS</a>
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">CDMS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,7 +36,7 @@
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
 
                         @if (User.IsInRole(Roles.SuperAdmin) || User.IsInRole(Roles.Admin))
@@ -64,12 +65,13 @@
         </main>
     </div>
 
-
-    <footer id="footer">
-        <div class="container">
-            &copy; 2024 - CDMS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer" style="line-height: 0px;">
+        <div class="copyright">
+            &copy; Copyright <a href="~/Home/AboutUs"><strong><span>Mathematics Dept</span></strong></a>. All Rights Reserved
         </div>
-    </footer>
+    </footer><!-- End Footer -->
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

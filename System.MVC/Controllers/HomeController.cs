@@ -30,6 +30,10 @@ namespace System.MVC.Controllers
 
 
 
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
