@@ -1,7 +1,7 @@
 /**
 * Template Name: NiceAdmin
+* Updated: Mar 09 2023 with Bootstrap v5.2.3
 * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-* Updated: Apr 20 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -45,7 +45,6 @@ h6 {
   margin-top: 60px;
   padding: 20px 30px;
   transition: all 0.3s;
-  width :auto;
 }
 
 @media (max-width: 1199px) {
@@ -243,7 +242,7 @@ h6 {
 
 .card-title span {
   color: #899bbd;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -634,7 +633,7 @@ h6 {
 
   #main,
   #footer {
-    margin-left: 300px;
+    /*margin-left: 300px;*/
   }
 }
 
@@ -745,7 +744,7 @@ h6 {
 .sidebar-nav .nav-content a i {
   font-size: 6px;
   margin-right: 8px;
-  line-height: 0;
+  /*line-height: 0;*/
   border-radius: 50%;
 }
 
@@ -1218,7 +1217,7 @@ h6 {
   padding: 20px 0;
   font-size: 14px;
   transition: all 0.3s;
-  border-top: 1px solid #cddfff;
+  /*border-top: 1px solid #cddfff;*/
 }
 
 .footer .copyright {
@@ -1231,4 +1230,102 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f9f9fa;
+}
+
+.section-title {
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #5f687b;
+  position: relative;
+  z-index: 2;
+}
+.section-title span {
+  position: absolute;
+  top: 30px;
+  color: #f0f1f3;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 0;
+}
+.section-title p {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  .section-title span {
+    font-size: 38px;
+  }
+}
+
+
+.team .member {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 30px 20px;
+  background: #fff;
+}
+.team .member img {
+  max-width: 100%;
+  max-height: 200px;
+  margin: 0 0 30px 0;
+}
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+.team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+}
+.team .member p {
+  padding-top: 10px;
+  font-size: 14px;
+  font-style: italic;
+  color: #aaaaaa;
+}
+.team .member .social {
+  margin-top: 15px;
+}
+.team .member .social a {
+  color: #919191;
+  transition: 0.3s;
+}
+.team .member .social a:hover {
+  color: #16df7e;
+}
+.team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
 }

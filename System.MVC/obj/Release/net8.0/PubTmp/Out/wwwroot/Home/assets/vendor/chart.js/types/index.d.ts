@@ -10,7 +10,9 @@ import {Color} from './color.js';
 import Element from '../core/core.element.js';
 import {ChartArea, Padding, Point} from './geometric.js';
 import {LayoutItem, LayoutPosition} from './layout.js';
-import {ColorsPluginOptions} from '../plugins/plugin.colors.js';
+import {RenderTextOpts} from './helpers/helpers.canvas.js';
+import {CanvasFontSpec} from '../helpers/helpers.options.js';
+import type {ColorsPluginOptions} from '../plugins/plugin.colors.js';
 
 export {EasingFunction} from '../helpers/helpers.easing.js';
 export {default as ArcElement, ArcProps} from '../elements/element.arc.js';
@@ -177,7 +179,7 @@ export interface BubbleDataPoint extends Point {
   /**
    * Bubble radius in pixels (not scaled).
    */
-  r?: number;
+  r: number;
 }
 
 export type BubbleController = DatasetController
@@ -516,7 +518,7 @@ export declare class Chart<
   buildOrUpdateScales(): void;
   buildOrUpdateControllers(): void;
   reset(): void;
-  update(mode?: UpdateMode | ((ctx: { datasetIndex: number }) => UpdateMode)): void;
+  update(mode?: UpdateMode): void;
   render(): void;
   draw(): void;
 
@@ -545,8 +547,6 @@ export declare class Chart<
   notifyPlugins(hook: string, args?: AnyObject): boolean | void;
 
   isPluginEnabled(pluginId: string): boolean;
-
-  getContext(): { chart: Chart, type: string };
 
   static readonly defaults: Defaults;
   static readonly overrides: Overrides;
@@ -817,19 +817,13 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
   id: string;
 
   /**
-   * The events option defines the browser events that the plugin should listen.
-   * @default ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove']
-   */
-  events?: (keyof HTMLElementEventMap)[]
-
-  /**
    * @desc Called when plugin is installed for this chart instance. This hook is also invoked for disabled plugins (options === false).
    * @param {Chart} chart - The chart instance.
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    * @since 3.0.0
    */
-  install?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  install?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called when a plugin is starting. This happens when chart is created or plugin is enabled.
    * @param {Chart} chart - The chart instance.
@@ -837,7 +831,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @since 3.0.0
    */
-  start?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  start?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called when a plugin stopping. This happens when chart is destroyed or plugin is disabled.
    * @param {Chart} chart - The chart instance.
@@ -845,21 +839,21 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @since 3.0.0
    */
-  stop?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  stop?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called before initializing `chart`.
    * @param {Chart} chart - The chart instance.
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  beforeInit?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  beforeInit?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called after `chart` has been initialized and before the first update.
    * @param {Chart} chart - The chart instance.
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  afterInit?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  afterInit?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called before updating `chart`. If any plugin returns `false`, the update
    * is cancelled (and thus subsequent render(s)) until another `update` is triggered.
@@ -869,7 +863,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @returns {boolean} `false` to cancel the chart update.
    */
-  beforeUpdate?(chart: Chart<TType>, args: { mode: UpdateMode, cancelable: true }, options: O): boolean | void;
+  beforeUpdate?(chart: Chart, args: { mode: UpdateMode, cancelable: true }, options: O): boolean | void;
   /**
    * @desc Called after `chart` has been updated and before rendering. Note that this
    * hook will not be called if the chart update has been previously cancelled.
@@ -878,7 +872,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {UpdateMode} args.mode - The update mode
    * @param {object} options - The plugin options.
    */
-  afterUpdate?(chart: Chart<TType>, args: { mode: UpdateMode }, options: O): void;
+  afterUpdate?(chart: Chart, args: { mode: UpdateMode }, options: O): void;
   /**
    * @desc Called during the update process, before any chart elements have been created.
    * This can be used for data decimation by changing the data array inside a dataset.
@@ -886,7 +880,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  beforeElementsUpdate?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  beforeElementsUpdate?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called during chart reset
    * @param {Chart} chart - The chart instance.
@@ -894,7 +888,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @since version 3.0.0
    */
-  reset?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  reset?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called before updating the `chart` datasets. If any plugin returns `false`,
    * the datasets update is cancelled until another `update` is triggered.
@@ -905,7 +899,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @returns {boolean} false to cancel the datasets update.
    * @since version 2.1.5
    */
-  beforeDatasetsUpdate?(chart: Chart<TType>, args: { mode: UpdateMode }, options: O): boolean | void;
+  beforeDatasetsUpdate?(chart: Chart, args: { mode: UpdateMode }, options: O): boolean | void;
   /**
    * @desc Called after the `chart` datasets have been updated. Note that this hook
    * will not be called if the datasets update has been previously cancelled.
@@ -915,7 +909,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @since version 2.1.5
    */
-  afterDatasetsUpdate?(chart: Chart<TType>, args: { mode: UpdateMode, cancelable: true }, options: O): void;
+  afterDatasetsUpdate?(chart: Chart, args: { mode: UpdateMode, cancelable: true }, options: O): void;
   /**
    * @desc Called before updating the `chart` dataset at the given `args.index`. If any plugin
    * returns `false`, the datasets update is cancelled until another `update` is triggered.
@@ -927,7 +921,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @returns {boolean} `false` to cancel the chart datasets drawing.
    */
-  beforeDatasetUpdate?(chart: Chart<TType>, args: { index: number; meta: ChartMeta, mode: UpdateMode, cancelable: true }, options: O): boolean | void;
+  beforeDatasetUpdate?(chart: Chart, args: { index: number; meta: ChartMeta, mode: UpdateMode, cancelable: true }, options: O): boolean | void;
   /**
    * @desc Called after the `chart` datasets at the given `args.index` has been updated. Note
    * that this hook will not be called if the datasets update has been previously cancelled.
@@ -938,7 +932,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {UpdateMode} args.mode - The update mode.
    * @param {object} options - The plugin options.
    */
-  afterDatasetUpdate?(chart: Chart<TType>, args: { index: number; meta: ChartMeta, mode: UpdateMode, cancelable: false }, options: O): void;
+  afterDatasetUpdate?(chart: Chart, args: { index: number; meta: ChartMeta, mode: UpdateMode, cancelable: false }, options: O): void;
   /**
    * @desc Called before laying out `chart`. If any plugin returns `false`,
    * the layout update is cancelled until another `update` is triggered.
@@ -947,7 +941,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @returns {boolean} `false` to cancel the chart layout.
    */
-  beforeLayout?(chart: Chart<TType>, args: { cancelable: true }, options: O): boolean | void;
+  beforeLayout?(chart: Chart, args: { cancelable: true }, options: O): boolean | void;
   /**
    * @desc Called before scale data limits are calculated. This hook is called separately for each scale in the chart.
    * @param {Chart} chart - The chart instance.
@@ -955,7 +949,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {Scale} args.scale - The scale.
    * @param {object} options - The plugin options.
    */
-  beforeDataLimits?(chart: Chart<TType>, args: { scale: Scale }, options: O): void;
+  beforeDataLimits?(chart: Chart, args: { scale: Scale }, options: O): void;
   /**
    * @desc Called after scale data limits are calculated. This hook is called separately for each scale in the chart.
    * @param {Chart} chart - The chart instance.
@@ -963,7 +957,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {Scale} args.scale - The scale.
    * @param {object} options - The plugin options.
    */
-  afterDataLimits?(chart: Chart<TType>, args: { scale: Scale }, options: O): void;
+  afterDataLimits?(chart: Chart, args: { scale: Scale }, options: O): void;
   /**
    * @desc Called before scale builds its ticks. This hook is called separately for each scale in the chart.
    * @param {Chart} chart - The chart instance.
@@ -971,7 +965,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {Scale} args.scale - The scale.
    * @param {object} options - The plugin options.
    */
-  beforeBuildTicks?(chart: Chart<TType>, args: { scale: Scale }, options: O): void;
+  beforeBuildTicks?(chart: Chart, args: { scale: Scale }, options: O): void;
   /**
    * @desc Called after scale has build its ticks. This hook is called separately for each scale in the chart.
    * @param {Chart} chart - The chart instance.
@@ -979,7 +973,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {Scale} args.scale - The scale.
    * @param {object} options - The plugin options.
    */
-  afterBuildTicks?(chart: Chart<TType>, args: { scale: Scale }, options: O): void;
+  afterBuildTicks?(chart: Chart, args: { scale: Scale }, options: O): void;
   /**
    * @desc Called after the `chart` has been laid out. Note that this hook will not
    * be called if the layout update has been previously cancelled.
@@ -987,7 +981,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  afterLayout?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  afterLayout?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called before rendering `chart`. If any plugin returns `false`,
    * the rendering is cancelled until another `render` is triggered.
@@ -996,7 +990,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @returns {boolean} `false` to cancel the chart rendering.
    */
-  beforeRender?(chart: Chart<TType>, args: { cancelable: true }, options: O): boolean | void;
+  beforeRender?(chart: Chart, args: { cancelable: true }, options: O): boolean | void;
   /**
    * @desc Called after the `chart` has been fully rendered (and animation completed). Note
    * that this hook will not be called if the rendering has been previously cancelled.
@@ -1004,7 +998,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  afterRender?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  afterRender?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called before drawing `chart` at every animation frame. If any plugin returns `false`,
    * the frame drawing is cancelled untilanother `render` is triggered.
@@ -1013,7 +1007,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @returns {boolean} `false` to cancel the chart drawing.
    */
-  beforeDraw?(chart: Chart<TType>, args: { cancelable: true }, options: O): boolean | void;
+  beforeDraw?(chart: Chart, args: { cancelable: true }, options: O): boolean | void;
   /**
    * @desc Called after the `chart` has been drawn. Note that this hook will not be called
    * if the drawing has been previously cancelled.
@@ -1021,7 +1015,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  afterDraw?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  afterDraw?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * @desc Called before drawing the `chart` datasets. If any plugin returns `false`,
    * the datasets drawing is cancelled until another `render` is triggered.
@@ -1030,7 +1024,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @returns {boolean} `false` to cancel the chart datasets drawing.
    */
-  beforeDatasetsDraw?(chart: Chart<TType>, args: { cancelable: true }, options: O): boolean | void;
+  beforeDatasetsDraw?(chart: Chart, args: { cancelable: true }, options: O): boolean | void;
   /**
    * @desc Called after the `chart` datasets have been drawn. Note that this hook
    * will not be called if the datasets drawing has been previously cancelled.
@@ -1038,7 +1032,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  afterDatasetsDraw?(chart: Chart<TType>, args: EmptyObject, options: O, cancelable: false): void;
+  afterDatasetsDraw?(chart: Chart, args: EmptyObject, options: O, cancelable: false): void;
   /**
    * @desc Called before drawing the `chart` dataset at the given `args.index` (datasets
    * are drawn in the reverse order). If any plugin returns `false`, the datasets drawing
@@ -1050,7 +1044,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @returns {boolean} `false` to cancel the chart datasets drawing.
    */
-  beforeDatasetDraw?(chart: Chart<TType>, args: { index: number; meta: ChartMeta }, options: O): boolean | void;
+  beforeDatasetDraw?(chart: Chart, args: { index: number; meta: ChartMeta }, options: O): boolean | void;
   /**
    * @desc Called after the `chart` datasets at the given `args.index` have been drawn
    * (datasets are drawn in the reverse order). Note that this hook will not be called
@@ -1061,7 +1055,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} args.meta - The dataset metadata.
    * @param {object} options - The plugin options.
    */
-  afterDatasetDraw?(chart: Chart<TType>, args: { index: number; meta: ChartMeta }, options: O): void;
+  afterDatasetDraw?(chart: Chart, args: { index: number; meta: ChartMeta }, options: O): void;
   /**
    * @desc Called before processing the specified `event`. If any plugin returns `false`,
    * the event will be discarded.
@@ -1072,7 +1066,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {boolean} args.inChartArea - The event position is inside chartArea
    * @param {object} options - The plugin options.
    */
-  beforeEvent?(chart: Chart<TType>, args: { event: ChartEvent, replay: boolean, cancelable: true, inChartArea: boolean }, options: O): boolean | void;
+  beforeEvent?(chart: Chart, args: { event: ChartEvent, replay: boolean, cancelable: true, inChartArea: boolean }, options: O): boolean | void;
   /**
    * @desc Called after the `event` has been consumed. Note that this hook
    * will not be called if the `event` has been previously discarded.
@@ -1084,7 +1078,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {boolean} [args.changed] - Set to true if the plugin needs a render. Should only be changed to true, because this args object is passed through all plugins.
    * @param {object} options - The plugin options.
    */
-  afterEvent?(chart: Chart<TType>, args: { event: ChartEvent, replay: boolean, changed?: boolean, cancelable: false, inChartArea: boolean }, options: O): void;
+  afterEvent?(chart: Chart, args: { event: ChartEvent, replay: boolean, changed?: boolean, cancelable: false, inChartArea: boolean }, options: O): void;
   /**
    * @desc Called after the chart as been resized.
    * @param {Chart} chart - The chart instance.
@@ -1092,21 +1086,21 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {number} args.size - The new canvas display size (eq. canvas.style width & height).
    * @param {object} options - The plugin options.
    */
-  resize?(chart: Chart<TType>, args: { size: { width: number, height: number } }, options: O): void;
+  resize?(chart: Chart, args: { size: { width: number, height: number } }, options: O): void;
   /**
    * Called before the chart is being destroyed.
    * @param {Chart} chart - The chart instance.
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  beforeDestroy?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  beforeDestroy?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * Called after the chart has been destroyed.
    * @param {Chart} chart - The chart instance.
    * @param {object} args - The call arguments.
    * @param {object} options - The plugin options.
    */
-  afterDestroy?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  afterDestroy?(chart: Chart, args: EmptyObject, options: O): void;
   /**
    * Called after chart is destroyed on all plugins that were installed for that chart. This hook is also invoked for disabled plugins (options === false).
    * @param {Chart} chart - The chart instance.
@@ -1114,7 +1108,7 @@ export interface Plugin<TType extends ChartType = ChartType, O = AnyObject> exte
    * @param {object} options - The plugin options.
    * @since 3.0.0
    */
-  uninstall?(chart: Chart<TType>, args: EmptyObject, options: O): void;
+  uninstall?(chart: Chart, args: EmptyObject, options: O): void;
 
   /**
    * Default options used in the plugin
@@ -1167,40 +1161,15 @@ export interface CoreScaleOptions {
    */
   alignToPixels: boolean;
   /**
-   * Background color of the scale area.
-   */
-  backgroundColor: Color;
-  /**
    * Reverse the scale.
    * @default false
    */
   reverse: boolean;
   /**
-   * Clip the dataset drawing against the size of the scale instead of chart area.
-   * @default true
-   */
-  clip: boolean;
-  /**
    * The weight used to sort the axis. Higher weights are further away from the chart area.
    * @default true
    */
   weight: number;
-  /**
-   * User defined minimum value for the scale, overrides minimum value from data.
-   */
-  min: unknown;
-  /**
-   * User defined maximum value for the scale, overrides maximum value from data.
-   */
-  max: unknown;
-  /**
-   * Adjustment used when calculating the maximum data value.
-   */
-  suggestedMin: unknown;
-  /**
-   * Adjustment used when calculating the minimum data value.
-   */
-  suggestedMax: unknown;
   /**
    * Callback called before the update process starts.
    */
@@ -1341,7 +1310,7 @@ export interface Scale<O extends CoreScaleOptions = CoreScaleOptions> extends El
   getBasePixel(): number;
 
   init(options: O): void;
-  parse(raw: unknown, index?: number): unknown;
+  parse(raw: unknown, index: number): unknown;
   getUserBounds(): { min: number; max: number; minDefined: boolean; maxDefined: boolean };
   getMinMax(canStack: boolean): { min: number; max: number };
   getTicks(): Tick[];
@@ -1388,102 +1357,6 @@ export interface ScriptableScalePointLabelContext {
   index: number;
   label: string;
   type: string;
-}
-
-export interface RenderTextOpts {
-  /**
-   * The fill color of the text. If unset, the existing
-   * fillStyle property of the canvas is unchanged.
-   */
-  color?: Color;
-
-  /**
-   * The width of the strikethrough / underline
-   * @default 2
-   */
-  decorationWidth?: number;
-
-  /**
-   * The max width of the text in pixels
-   */
-  maxWidth?: number;
-
-  /**
-   * A rotation to be applied to the canvas
-   * This is applied after the translation is applied
-   */
-  rotation?: number;
-
-  /**
-   * Apply a strikethrough effect to the text
-   */
-  strikethrough?: boolean;
-
-  /**
-   * The color of the text stroke. If unset, the existing
-   * strokeStyle property of the context is unchanged
-   */
-  strokeColor?: Color;
-
-  /**
-   * The text stroke width. If unset, the existing
-   * lineWidth property of the context is unchanged
-   */
-  strokeWidth?: number;
-
-  /**
-   * The text alignment to use. If unset, the existing
-   * textAlign property of the context is unchanged
-   */
-  textAlign?: CanvasTextAlign;
-
-  /**
-   * The text baseline to use. If unset, the existing
-   * textBaseline property of the context is unchanged
-   */
-  textBaseline?: CanvasTextBaseline;
-
-  /**
-   * If specified, a translation to apply to the context
-   */
-  translation?: [number, number];
-
-  /**
-   * Underline the text
-   */
-  underline?: boolean;
-
-  /**
-   * Dimensions for drawing the label backdrop
-   */
-  backdrop?: BackdropOptions;
-}
-
-export interface BackdropOptions {
-  /**
-   * Left position of backdrop as pixel
-   */
-  left: number;
-
-  /**
-   * Top position of backdrop as pixel
-   */
-  top: number;
-
-  /**
-   * Width of backdrop in pixels
-   */
-  width: number;
-
-  /**
-   * Height of backdrop in pixels
-   */
-  height: number;
-
-  /**
-   * Color of label backdrops.
-   */
-  color: Scriptable<Color, ScriptableScaleContext>;
 }
 
 export interface LabelItem {
@@ -1628,7 +1501,7 @@ export interface CoreChartOptions<TType extends ChartType> extends ParsingOption
    */
   responsive: boolean;
   /**
-   * Maintain the original canvas aspect ratio (width / height) when resizing. For this option to work properly the chart must be in its own dedicated container.
+   * Maintain the original canvas aspect ratio (width / height) when resizing.
    * @default true
    */
   maintainAspectRatio: boolean;
@@ -1777,16 +1650,12 @@ export interface FontSpec {
   /**
    * Default font weight (boldness). (see MDN).
    */
-  weight: 'normal' | 'bold' | 'lighter' | 'bolder' | number | null;
+  weight: string | null;
   /**
    * Height of an individual line of text (see MDN).
    * @default 1.2
    */
   lineHeight: number | string;
-}
-
-export interface CanvasFontSpec extends FontSpec {
-  string: string;
 }
 
 export type TextAlign = 'left' | 'center' | 'right';
@@ -1831,16 +1700,7 @@ export interface ArcOptions extends CommonElementOptions {
    * Arc stroke alignment.
    */
   borderAlign: 'center' | 'inner';
-  /**
-   * Line dash. See MDN.
-   * @default []
-   */
-  borderDash: number[];
-  /**
-   * Line dash offset. See MDN.
-   * @default 0.0
-   */
-  borderDashOffset: number;
+
   /**
    * Line join style. See MDN. Default is 'round' when `borderAlign` is 'inner', else 'bevel'.
    */
@@ -1870,8 +1730,6 @@ export interface ArcOptions extends CommonElementOptions {
 }
 
 export interface ArcHoverOptions extends CommonHoverOptions {
-  hoverBorderDash: number[];
-  hoverBorderDashOffset: number;
   hoverOffset: number;
 }
 
@@ -2221,7 +2079,7 @@ export type DecimationOptions = LttbDecimationOptions | MinMaxDecimationOptions;
 
 export declare const Filler: Plugin;
 export interface FillerOptions {
-  drawTime: 'beforeDraw' | 'beforeDatasetDraw' | 'beforeDatasetsDraw';
+  drawTime: 'beforeDatasetDraw' | 'beforeDatasetsDraw';
   propagate: boolean;
 }
 
@@ -2425,10 +2283,6 @@ export interface LegendOptions<TType extends ChartType> {
      */
     padding: number;
     /**
-     * If usePointStyle is true, the width of the point style used for the legend.
-     */
-    pointStyleWidth: number;
-    /**
      * Generates legend items for each thing in the legend. Default implementation returns the text + styling for the color box. See Legend Item for details.
      */
     generateLabels(chart: Chart): LegendItem[];
@@ -2477,7 +2331,7 @@ export interface LegendOptions<TType extends ChartType> {
   rtl: boolean;
   /**
    * This will force the text direction 'rtl' or 'ltr' on the canvas for rendering the legend, regardless of the css specified on the canvas
-   * @default canvas's default
+   * @default canvas' default
    */
   textDirection: string;
 
@@ -2996,7 +2850,7 @@ export interface GridLineOptions {
   /**
    * @default []
    */
-  tickBorderDash: Scriptable<number[], ScriptableScaleContext>;
+  tickBorderDash: number[];
   /**
    * @default 0
    */
@@ -3268,11 +3122,11 @@ export type LinearScaleOptions = CartesianScaleOptions & {
    */
   beginAtZero: boolean;
   /**
-   * Adjustment used when calculating the minimum data value.
+   * Adjustment used when calculating the maximum data value.
    */
   suggestedMin?: number;
   /**
-   * Adjustment used when calculating the maximum data value.
+   * Adjustment used when calculating the minimum data value.
    */
   suggestedMax?: number;
   /**
@@ -3333,61 +3187,6 @@ export declare const LogarithmicScale: ChartComponent & {
   new <O extends LogarithmicScaleOptions = LogarithmicScaleOptions>(cfg: AnyObject): LogarithmicScale<O>;
 };
 
-export type TimeScaleTimeOptions = {
-  /**
-   * Custom parser for dates.
-   */
-  parser: string | ((v: unknown) => number);
-  /**
-   * If defined, dates will be rounded to the start of this unit. See Time Units below for the allowed units.
-   */
-  round: false | TimeUnit;
-  /**
-   * If boolean and true and the unit is set to 'week', then the first day of the week will be Monday. Otherwise, it will be Sunday.
-   * If `number`, the index of the first day of the week (0 - Sunday, 6 - Saturday).
-   * @default false
-   */
-  isoWeekday: boolean | number;
-  /**
-   * Sets how different time units are displayed.
-   */
-  displayFormats: {
-    [key: string]: string;
-  };
-  /**
-   * The format string to use for the tooltip.
-   */
-  tooltipFormat: string;
-  /**
-   * If defined, will force the unit to be a certain type. See Time Units section below for details.
-   * @default false
-   */
-  unit: false | TimeUnit;
-  /**
-   * The minimum display format to be used for a time unit.
-   * @default 'millisecond'
-   */
-  minUnit: TimeUnit;
-};
-
-export type TimeScaleTickOptions = {
-  /**
-   * Ticks generation input values:
-   * - 'auto': generates "optimal" ticks based on scale size and time options.
-   * - 'data': generates ticks from data (including labels from data `{t|x|y}` objects).
-   * - 'labels': generates ticks from user given `data.labels` values ONLY.
-   * @see https://github.com/chartjs/Chart.js/pull/4507
-   * @since 2.7.0
-   * @default 'auto'
-   */
-  source: 'labels' | 'auto' | 'data';
-  /**
-   * The number of units between grid lines.
-   * @default 1
-   */
-  stepSize: number;
-};
-
 export type TimeScaleOptions = Omit<CartesianScaleOptions, 'min' | 'max'> & {
   min: string | number;
   max: string | number;
@@ -3416,9 +3215,60 @@ export type TimeScaleOptions = Omit<CartesianScaleOptions, 'min' | 'max'> & {
     date: unknown;
   };
 
-  time: TimeScaleTimeOptions;
+  time: {
+    /**
+     * Custom parser for dates.
+     */
+    parser: string | ((v: unknown) => number);
+    /**
+     * If defined, dates will be rounded to the start of this unit. See Time Units below for the allowed units.
+     */
+    round: false | TimeUnit;
+    /**
+     * If boolean and true and the unit is set to 'week', then the first day of the week will be Monday. Otherwise, it will be Sunday.
+     * If `number`, the index of the first day of the week (0 - Sunday, 6 - Saturday).
+     * @default false
+     */
+    isoWeekday: boolean | number;
+    /**
+     * Sets how different time units are displayed.
+     */
+    displayFormats: {
+      [key: string]: string;
+    };
+    /**
+     * The format string to use for the tooltip.
+     */
+    tooltipFormat: string;
+    /**
+     * If defined, will force the unit to be a certain type. See Time Units section below for details.
+     * @default false
+     */
+    unit: false | TimeUnit;
+    /**
+     * The minimum display format to be used for a time unit.
+     * @default 'millisecond'
+     */
+    minUnit: TimeUnit;
+  };
 
-  ticks: TimeScaleTickOptions;
+  ticks: {
+    /**
+     * Ticks generation input values:
+     * - 'auto': generates "optimal" ticks based on scale size and time options.
+     * - 'data': generates ticks from data (including labels from data `{t|x|y}` objects).
+     * - 'labels': generates ticks from user given `data.labels` values ONLY.
+     * @see https://github.com/chartjs/Chart.js/pull/4507
+     * @since 2.7.0
+     * @default 'auto'
+     */
+    source: 'labels' | 'auto' | 'data';
+    /**
+     * The number of units between grid lines.
+     * @default 1
+     */
+    stepSize: number;
+  };
 };
 
 export interface TimeScale<O extends TimeScaleOptions = TimeScaleOptions> extends Scale<O> {
@@ -3468,6 +3318,8 @@ export type RadialTickOptions = TickOptions & {
 }
 
 export type RadialLinearScaleOptions = CoreScaleOptions & {
+  backgroundColor: Color;
+
   animate: boolean;
 
   startAngle: number;
@@ -3537,10 +3389,10 @@ export type RadialLinearScaleOptions = CoreScaleOptions & {
     borderRadius: Scriptable<number | BorderRadius, ScriptableScalePointLabelContext>;
 
     /**
-     * if true, point labels are shown. When `display: 'auto'`, the label is hidden if it overlaps with another label.
+     * if true, point labels are shown.
      * @default true
      */
-    display: boolean | 'auto';
+    display: boolean;
     /**
      * Color of label
      * @see Defaults.color
@@ -3792,8 +3644,6 @@ export interface ChartData<
   TLabel = unknown
 > {
   labels?: TLabel[];
-  xLabels?: TLabel[];
-  yLabels?: TLabel[];
   datasets: ChartDataset<TType, TData>[];
 }
 
@@ -3803,8 +3653,6 @@ export interface ChartDataCustomTypesPerDataset<
   TLabel = unknown
 > {
   labels?: TLabel[];
-  xLabels?: TLabel[];
-  yLabels?: TLabel[];
   datasets: ChartDatasetCustomTypesPerDataset<TType, TData>[];
 }
 
@@ -3817,7 +3665,6 @@ export interface ChartConfiguration<
   data: ChartData<TType, TData, TLabel>;
   options?: ChartOptions<TType>;
   plugins?: Plugin<TType>[];
-  platform?: typeof BasePlatform;
 }
 
 export interface ChartConfigurationCustomTypesPerDataset<

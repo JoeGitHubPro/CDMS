@@ -1,7 +1,7 @@
 /*!
- * Chart.js v4.4.3
+ * Chart.js v4.2.1
  * https://www.chartjs.org
- * (c) 2024 Chart.js Contributors
+ * (c) 2023 Chart.js Contributors
  * Released under the MIT License
  */
 'use strict';

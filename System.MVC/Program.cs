@@ -14,7 +14,7 @@ namespace System.MVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var localConnectionString = builder.Configuration.GetConnectionString("LocalConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");
+            var localConnectionString = builder.Configuration.GetConnectionString("RemoteConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");
 
             builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
             optionsBuilder.UseSqlServer(localConnectionString));
