@@ -1,4 +1,5 @@
 # CDMS - Custody Database Management System
+![CDMS](https://github.com/JoeGitHubPro/CDMS/blob/main/Documents/1.png)
 ## Overview
 CDMS (Custody Database Management System) is a .NET Core 8.0 MVC application developed to manage custody items within an organization efficiently. The system allows users to track, assign, and monitor custody items, ensuring that all relevant data is organized and accessible.
 
@@ -60,3 +61,46 @@ cd CDMS
 dotnet restore
 dotnet ef database update
 dotnet run
+```
+## Usage
+
+### Screens
+The application features multiple screens to manage and view custody items, users, and categories. Key screens include:
+- **Dashboard**: Overview of the system's current state.
+- **Custody Management**: Assign, track, and manage custody items.
+- **User Management**: Add, remove, and update user information.
+- 
+### Devices and Categories
+The application supports the management of various devices and their categorization. Admin users can add new devices and categorize them for better organization.
+
+![Devices and Categories Screenshot](https://github.com/JoeGitHubPro/CDMS/blob/main/Documents/2.png)
+
+
+### User Management
+- **Email Verification**: Ensures that users verify their email addresses before gaining full access.
+- **Account Lockout**: Protects against unauthorized access by locking out users after multiple failed login attempts.
+
+![User Management](https://github.com/JoeGitHubPro/CDMS/blob/main/Documents/3.png)
+
+## Themes
+CDMS allows users to personalize their experience by choosing from over 26 different themes. This feature enhances usability and ensures that the application can cater to different user preferences.
+
+![Theme Screenshot](https://github.com/JoeGitHubPro/CDMS/blob/main/Documents/4.png)
+
+## Email Notifications
+Email notifications are sent automatically for key events, such as:
+- New custody assignments
+- Changes in custody status
+- User registration and email verification
+
+## Security Features
+- **Email Verification**: Users must verify their email to activate their account.
+- **Account Lockout**: The system locks out users after several failed login attempts, adding an extra layer of security.
+- **Role-Based Access Control**: Permissions are managed based on user roles, ensuring that only authorized users can perform certain actions.
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
